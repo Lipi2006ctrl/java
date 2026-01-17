@@ -1,0 +1,41 @@
+class MagicTrick {
+    public static void main(String[] args) {
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[1]);
+        int c = Integer.parseInt(args[2]);
+
+        int largest, middle, smallest;
+
+        if (a > b && a > c) {
+            largest = a;
+            if (b > c) {
+                middle = b;
+                smallest = c;
+            } else {
+                middle = c;
+                smallest = b;
+            }
+        } else if (b > a && b > c) {
+            largest = b;
+            if (a > c) {
+                middle = a;
+                smallest = c;
+            } else {
+                middle = c;
+                smallest = a;
+            }
+        } else {
+            largest = c;
+            if (a > b) {
+                middle = a;
+                smallest = b;
+            } else {
+                middle = b;
+                smallest = a;
+            }
+        }
+
+        int number = largest * 100 + middle * 10 + smallest;
+        System.out.println("Magic Number = " + number);
+    }
+}
