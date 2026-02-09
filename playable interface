@@ -1,0 +1,31 @@
+interface Playable {
+    void play();
+}
+
+class Football implements Playable {
+    public void play() {
+        System.out.println("Playing Football");
+    }
+}
+
+class Volleyball implements Playable {
+    public void play() {
+        System.out.println("Playing Volleyball");
+    }
+}
+
+class Basketball implements Playable {
+    public void play() {
+        System.out.println("Playing Basketball");
+    }
+
+    public static void main(String[] args) {
+        Playable game1 = new Football();
+        Playable game2 = new Volleyball();
+        Playable game3 = new Basketball();
+
+        game1.play();
+        game2.play();
+        game3.play();
+    }
+}
