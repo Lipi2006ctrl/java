@@ -1,0 +1,75 @@
+class Vehicle {
+    String make;
+    String model;
+    int year;
+    String fuelType;
+
+    Vehicle(String make, String model, int year, String fuelType) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelType = fuelType;
+    }
+
+    double fuelEfficiency() {
+        return 0;
+    }
+
+    double distanceTraveled(double fuel) {
+        return fuel * fuelEfficiency();
+    }
+
+    int maxSpeed() {
+        return 0;
+    }
+}
+
+class Car extends Vehicle {
+    Car(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    double fuelEfficiency() {
+        return 15;
+    }
+
+    int maxSpeed() {
+        return 180;
+    }
+}
+
+class Truck extends Vehicle {
+    Truck(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    double fuelEfficiency() {
+        return 8;
+    }
+
+    int maxSpeed() {
+        return 120;
+    }
+}
+
+class Motorcycle extends Vehicle {
+    Motorcycle(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    double fuelEfficiency() {
+        return 35;
+    }
+
+    int maxSpeed() {
+        return 200;
+    }
+}
+
+public class VehicleDemo {
+    public static void main(String[] args) {
+        Vehicle car = new Car("Honda", "City", 2023, "Petrol");
+        System.out.println("Car Distance: " + car.distanceTraveled(10));
+        System.out.println("Car Max Speed: " + car.maxSpeed());
+    }
+}
