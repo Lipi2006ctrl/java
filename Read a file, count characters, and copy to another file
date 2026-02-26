@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class FileReadCopy {
+    public static void main(String[] args) {
+        int charCount = 0;
+
+        try {
+            FileInputStream fin = new FileInputStream("input.txt");
+            FileOutputStream fout = new FileOutputStream("output.txt");
+
+            int data;
+
+            while ((data = fin.read()) != -1) {
+                charCount++;              // count characters
+                fout.write(data);        // copy to another file
+            }
+
+            fin.close();
+            fout.close();
+
+            System.out.println("File copied successfully.");
+            System.out.println("Number of characters: " + charCount);
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
