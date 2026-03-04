@@ -1,0 +1,53 @@
+public class StringOperations {
+    public static void main(String[] args) {
+
+        // 1. Get the length of a given string
+        String str = "example.com";
+        System.out.println("The string length of '" + str + "' is: " + str.length());
+
+        System.out.println();
+
+        // 2. Get the character at the given index
+        String str2 = "Java Exercises!";
+        System.out.println("Original String = " + str2);
+        System.out.println("The character at position 0 is " + str2.charAt(0));
+        System.out.println("The character at position 10 is " + str2.charAt(10));
+
+        System.out.println();
+
+        // 3. Compare two strings ignoring case differences
+        String s1 = "This is exercise 4";
+        String s2 = "This is Exercise 4";
+
+        System.out.println("String 1: " + s1);
+        System.out.println("String 2: " + s2);
+
+        if (s1.equalsIgnoreCase(s2)) {
+            System.out.println("\"" + s1 + "\" is equal to \"" + s2 + "\"");
+        } else {
+            System.out.println("Strings are not equal");
+        }
+
+        System.out.println();
+
+        // 4. Check region matches
+        String str1 = "Red is favorite color";
+        String str3 = "Orange is also my favorite color";
+
+        boolean result1 = str1.regionMatches(0, str3, 28, 7);
+        boolean result2 = str1.regionMatches(9, str3, 9, 6);
+
+        System.out.println("str1[0 - 7] == str3[28 - 35]? " + result1);
+        System.out.println("str1[9 - 15] == str3[9 - 15]? " + result2);
+
+        System.out.println();
+
+        // 5. Replace substring using regular expression
+        String sentence = "The quick brown fox jumps over the lazy dog.";
+        System.out.println("Original string: " + sentence);
+
+        String newSentence = sentence.replaceAll("fox", "cat");
+
+        System.out.println("New String: " + newSentence);
+    }
+}
